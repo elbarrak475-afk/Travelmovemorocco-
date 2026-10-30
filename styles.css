@@ -2299,9 +2299,9 @@ button.btn,
 }
 
 /* Card header photos */
-.card .image-placeholder.img-marrakech { background: url('images/marrakech-travel-guide.jpg') center / cover no-repeat; }
-.card .image-placeholder.img-fes { background: url('images/fes-medina-guide.jpg') center / cover no-repeat; }
-.card .image-placeholder.img-chefchaouen { background: url('images/chefchauen-blue-city.jpg') center / cover no-repeat; }
+.card .image-placeholder.img-marrakech { background: url('images/marrakech-travel-guide.webp') center / cover no-repeat; }
+.card .image-placeholder.img-fes { background: url('images/fes-medina-guide.webp') center / cover no-repeat; }
+.card .image-placeholder.img-chefchaouen { background: url('images/chefchauen-blue-city.webp') center / cover no-repeat; }
 .card .image-placeholder.has-img { font-size: 0; overflow: hidden; }
 
 /* Article photos */
