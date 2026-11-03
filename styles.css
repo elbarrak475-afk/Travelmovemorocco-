@@ -1690,7 +1690,7 @@ body > article h3 {
 
 /* 60% - clean surfaces */
 body {
-  background: #F8F9FA;
+  background: #ffffff;
   background-image: none;
   color: #111111;
 }
@@ -1834,10 +1834,14 @@ a[href*="affiliate"]:hover {
   background: #FFFFFF;
 }
 
-.card,
-.info-card {
+.card {
   border: 1px solid #E9ECEF;
   box-shadow: var(--shadow-card);
+}
+
+.info-card {
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
 }
 
 .card:hover {
@@ -2307,3 +2311,21 @@ button.btn,
 /* Article photos */
 img.article-img { display: block; width: 100%; height: auto; max-height: 560px; object-fit: cover; margin: 0 0 28px; border-radius: var(--r); box-shadow: var(--shadow-card); }
 img.article-img.featured-image { min-height: 0; }
+
+/* All card components: Pale Desert Linen with subtle border and gentle shadow */
+.card,
+.info-card,
+.weather-card,
+.packing-card,
+.season-card,
+.review-card {
+  background-color: #faf6f3 !important;
+  border: 1px solid #f1e5de !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+  border-radius: 12px !important;
+}
+
+/* Page background: pure white so linen cards pop elegantly */
+body {
+  background-color: #ffffff;
+}
