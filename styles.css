@@ -2312,20 +2312,476 @@ button.btn,
 img.article-img { display: block; width: 100%; height: auto; max-height: 560px; object-fit: cover; margin: 0 0 28px; border-radius: var(--r); box-shadow: var(--shadow-card); }
 img.article-img.featured-image { min-height: 0; }
 
-/* All card components: Pale Desert Linen with subtle border and gentle shadow */
+/* All card components: clean white with subtle border and soft shadow */
 .card,
 .info-card,
 .weather-card,
 .packing-card,
 .season-card,
 .review-card {
-  background-color: #faf6f3 !important;
-  border: 1px solid #f1e5de !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+  background-color: #ffffff !important;
+  border: 1px solid #eef0f4 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
   border-radius: 12px !important;
 }
 
-/* Page background: pure white so linen cards pop elegantly */
+/* Page background: pure white so cards pop elegantly */
 body {
   background-color: #ffffff;
+}
+
+/* ==========================================================================
+   Premium Editorial Polish — Weather & Packing Guide + Reviews pages
+   ========================================================================== */
+
+/* Soft warm bands & hero wash so white cards pop */
+.band {
+  background: #FBFAF7;
+}
+
+.page-hero {
+  background: linear-gradient(180deg, #FFFBF6 0%, #FFFFFF 100%);
+  border-bottom: 1px solid #F2EDE7;
+}
+
+/* --- Badge tags: distinct warm accent colors --- */
+.tag {
+  padding: 6px 14px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  border-radius: var(--r-full);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.10);
+}
+
+.tag-riad      { background: #E0552F; box-shadow: 0 3px 10px rgba(224, 85, 47, 0.32); }
+.tag-desert    { background: #D97706; box-shadow: 0 3px 10px rgba(217, 119, 6, 0.32); }
+.tag-tour      { background: #C0392B; box-shadow: 0 3px 10px rgba(192, 57, 43, 0.32); }
+.tag-service   { background: #C2496B; box-shadow: 0 3px 10px rgba(194, 73, 107, 0.30); }
+.tag-transport { background: #8C5A2B; box-shadow: 0 3px 10px rgba(140, 90, 43, 0.32); }
+
+.tag-spring { background: #3F9E63; box-shadow: 0 3px 10px rgba(63, 158, 99, 0.30); }
+.tag-summer { background: #E8552F; box-shadow: 0 3px 10px rgba(232, 85, 47, 0.32); }
+.tag-autumn { background: #C77B21; box-shadow: 0 3px 10px rgba(199, 123, 33, 0.32); }
+.tag-winter { background: #54779B; box-shadow: 0 3px 10px rgba(84, 119, 155, 0.30); }
+
+/* --- Season cards: white panels with a warm top accent --- */
+.season-card {
+  position: relative;
+  overflow: hidden;
+  padding-top: 32px;
+  text-align: left;
+}
+
+.season-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #FF5722, #D97706);
+}
+
+.season-spring::before { background: linear-gradient(90deg, #3F9E63, #7BC496); }
+.season-summer::before { background: linear-gradient(90deg, #E8552F, #F59E0B); }
+.season-autumn::before { background: linear-gradient(90deg, #C77B21, #E3A84B); }
+.season-winter::before { background: linear-gradient(90deg, #54779B, #8FA9C4); }
+
+.season-card h3 {
+  margin: 16px 0 10px;
+  font-size: 1.12rem;
+  letter-spacing: -0.015em;
+}
+
+.season-card .temps {
+  display: inline-block;
+  margin: 0 0 12px;
+  padding: 6px 12px;
+  background: #FFF6EC;
+  border: 1px solid #F7E4C8;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.season-card .temps strong {
+  color: #D9441A;
+}
+
+/* --- Review cards --- */
+.review-card {
+  text-align: left;
+}
+
+.review-card .image-placeholder {
+  background:
+    radial-gradient(ellipse at 82% 18%, rgba(217, 119, 6, 0.16), transparent 52%),
+    radial-gradient(ellipse at 12% 88%, rgba(224, 85, 47, 0.13), transparent 55%),
+    linear-gradient(135deg, #FDF9F3, #F8EFE2 58%, #F2E5D2);
+  border-bottom: 1px solid #F1E9DD;
+  color: #A68B6F;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.verified-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  background: #E9F7EF;
+  border: 1px solid #BFE6CC;
+  border-radius: var(--r-full);
+  color: #1E7B44;
+  font-family: var(--sans-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.review-card .b .review-loc {
+  margin: 0 0 10px;
+  color: #868E96;
+  font-size: 0.86rem;
+  font-weight: 500;
+}
+
+/* Rating pill */
+.review-card .b .stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 14px;
+  padding: 5px 14px;
+  background: #FFF8EC;
+  border: 1px solid #F5E3BD;
+  border-radius: var(--r-full);
+  font-size: 0.9rem;
+}
+
+.stars span {
+  color: #F59E0B;
+  font-size: 1rem;
+  letter-spacing: 2.5px;
+}
+
+.stars strong {
+  color: #111111;
+}
+
+/* Pros & cons panels */
+.pros-cons {
+  gap: 14px;
+  margin: 6px 0 24px;
+}
+
+.pros,
+.cons {
+  padding: 14px 16px 16px;
+  border-radius: 10px;
+}
+
+.pros {
+  background: #F2FAF4;
+  border: 1px solid #DDF0E1;
+}
+
+.cons {
+  background: #FDF4F2;
+  border: 1px solid #F6E0DA;
+}
+
+.pros-cons h4 {
+  margin: 0 0 10px;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+}
+
+.pros h4 { color: #1E7B44; }
+.cons h4 { color: #B3402A; }
+
+.pros li::before { color: #2FA36B; }
+.cons li::before { color: #D97356; }
+
+/* --- Insider tips --- */
+.tips-list {
+  text-align: left;
+}
+
+.tip {
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid #F1EDE8;
+  border-left: 4px solid #FF5722;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+/* --- Affiliate disclosure --- */
+.affiliate-note {
+  background: #FFFDF7;
+  border: 1px solid #F1E9DA;
+  border-left: 4px solid #D97706;
+  border-radius: 12px;
+}
+
+/* --- Gentle hover lift --- */
+.info-card,
+.tip {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.info-card:hover,
+.tip:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08) !important;
+}
+
+.card:hover {
+  border-color: #E2E6EC !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* --- Editorial typography & rhythm --- */
+.section-title {
+  letter-spacing: -0.02em;
+}
+
+.resource-intro {
+  line-height: 1.75;
+}
+
+.review-card h3 {
+  letter-spacing: -0.015em;
+}
+
+/* --- Responsive polish --- */
+@media (max-width: 680px) {
+  .pros-cons {
+    grid-template-columns: 1fr;
+  }
+
+  .review-top {
+    gap: 6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .info-card,
+  .info-card:hover,
+  .tip,
+  .tip:hover {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* ==========================================================================
+   GLOBAL DESIGN SYSTEM — Unified premium travel-blog aesthetic
+   Applies to every page: index, articles/, resources, about, contact,
+   weather-packing-guide, reviews, legal.
+   ========================================================================== */
+
+/* --- 1. Global Card Consistency -----------------------------------------
+   Every card-like surface: clean white, soft shadow, subtle border, 12px. */
+.card,
+.info-card,
+.weather-card,
+.packing-card,
+.season-card,
+.review-card,
+.author-box,
+.tip,
+.affiliate-note,
+.callout,
+.contact-side .info-card,
+.contact-form,
+.dropdown-menu {
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+/* Card inner bodies stay white so image placeholders sit on a clean base */
+.card div.b {
+  background: #ffffff;
+  border-radius: 0 0 12px 12px;
+}
+
+/* Article imagery & callouts share the same soft elevation */
+img.article-img,
+body > article .featured-image,
+.story-visual {
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+/* Callout: keep the warm tint but align radius/elevation with the system */
+.callout {
+  background: linear-gradient(135deg, #fffbf8 0%, #fdf6ee 100%);
+  border: 1px solid #f3e4d7;
+  border-left: 4px solid #FF5722;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+/* Author box: clean white panel */
+.author-box {
+  border: 1px solid #eaeaea;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+/* --- 2. Typography & Spacing --------------------------------------------
+   Consistent, elegant rhythm across all templates. */
+.page-section {
+  padding: clamp(48px, 7vw, 72px) 0;
+}
+
+.section-title,
+.story h2,
+#guides {
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0 0 18px;
+}
+
+.resource-intro,
+.band p,
+.page-hero p {
+  line-height: 1.75;
+}
+
+/* Uniform vertical gaps inside card bodies */
+.card div.b > p,
+.info-card p {
+  line-height: 1.65;
+}
+
+.card h3,
+.info-card h3 {
+  letter-spacing: -0.015em;
+}
+
+/* Grid gutters stay consistent on every listing page */
+.grid,
+.values,
+.climate-grid,
+.season-grid,
+.checklist-grid {
+  gap: clamp(20px, 2.6vw, 32px);
+}
+
+/* --- 3. Interactive Hover Effects ---------------------------------------
+   Smooth, subtle lift-up on all clickable cards & buttons. */
+.card,
+.info-card,
+.author-box,
+.tip,
+.social-btn,
+.btn {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease,
+              background-color 0.25s ease;
+}
+
+.card:hover,
+.info-card:hover,
+.author-box:hover,
+.tip:hover {
+  transform: translateY(-5px);
+  border-color: #e2e6ec;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* Buttons: gentle lift with a warm glow */
+.btn {
+  transition: transform 0.22s ease, box-shadow 0.25s ease,
+              background 0.25s ease, border-color 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(230, 74, 25, 0.38);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Social pills lift subtly */
+.social-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Respect reduced-motion preferences globally */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card:hover,
+  .info-card,
+  .info-card:hover,
+  .author-box,
+  .author-box:hover,
+  .tip,
+  .tip:hover,
+  .btn,
+  .btn:hover,
+  .social-btn,
+  .social-btn:hover {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* --- 4. Mobile Responsiveness -------------------------------------------
+   Every layout scales cleanly across phones, tablets and desktops. */
+
+/* Tablet */
+@media (max-width: 960px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .values { grid-template-columns: 1fr; }
+  .story,
+  .contact-layout { grid-template-columns: 1fr; gap: 32px; }
+  .climate-grid,
+  .season-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .checklist-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Mobile */
+@media (max-width: 680px) {
+  .grid,
+  .climate-grid,
+  .season-grid,
+  .checklist-grid { grid-template-columns: 1fr; }
+
+  .page-hero { padding: 48px 0 40px; }
+  .page-section { padding: 44px 0; }
+
+  .card div.b { padding: 20px 22px 24px; }
+
+  .pros-cons { grid-template-columns: 1fr; }
+
+  .author-box {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 14px;
+    padding: 22px;
+  }
+
+  .callout { padding: 20px 22px; }
+
+  body > article {
+    width: min(100% - 32px, 780px);
+    margin: 36px auto 64px;
+  }
+}
+
+/* Small handhelds */
+@media (max-width: 380px) {
+  .card div.b { padding: 18px 18px 22px; }
+  .info-card { padding: 22px; }
 }
