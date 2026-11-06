@@ -85,8 +85,7 @@ h4,
 .btn,
 nav,
 .tag,
-.logo,
-.price {
+.logo {
   font-family: var(--sans-display);
 }
 
@@ -674,22 +673,6 @@ img.card-image {
   color: #FBBF24;
 }
 
-.price {
-  margin: 0 0 24px;
-  color: #FBBF24;
-  font-size: 2.35rem;
-  font-weight: 800;
-  letter-spacing: -0.04em;
-}
-
-.price small {
-  margin-left: 8px;
-  color: #94A3B8;
-  font-size: 0.9rem;
-  font-weight: 500;
-  letter-spacing: 0;
-}
-
 /* --- Comprehensive Footer --- */
 .site-footer {
   padding: 80px 0 40px;
@@ -1030,31 +1013,6 @@ body > article ol {
   min-height: 46px;
   margin-top: 16px;
   padding: 11px 24px;
-}
-
-.mini {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin: 40px 0;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: var(--r);
-  padding: 26px;
-  color: var(--white);
-  background:
-    radial-gradient(ellipse at 100% 0, rgba(217, 83, 37, 0.28), transparent 55%),
-    var(--dark);
-  box-shadow: var(--shadow-card);
-}
-
-.mini .book-mini {
-  flex: 1 1 230px;
-  line-height: 1.9;
-}
-
-.mini .price {
-  font-size: 1.55rem;
 }
 
 /* ==========================================================================
@@ -1563,13 +1521,8 @@ nav a::after {
   color: #FBF3E6;
 }
 
-.ebook li::first-letter,
-.price {
+.ebook li::first-letter {
   color: var(--gold-bright);
-}
-
-.price small {
-  color: #BFA98F;
 }
 
 /* Footer: espresso with gold accents */
@@ -1823,10 +1776,6 @@ a[href*="affiliate"]:hover {
   color: var(--cta-hover);
 }
 
-.price {
-  color: var(--cta);
-}
-
 /* Cards: white, minimal border, soft shadow */
 .card,
 .info-card,
@@ -1918,10 +1867,6 @@ a[href*="affiliate"]:hover {
 
 .ebook li::first-letter {
   color: #FFFFFF;
-}
-
-.ebook .price small {
-  color: #ADB5BD;
 }
 
 .site-footer {
@@ -2315,8 +2260,6 @@ img.article-img.featured-image { min-height: 0; }
 /* All card components: clean white with subtle border and soft shadow */
 .card,
 .info-card,
-.weather-card,
-.packing-card,
 .season-card,
 .review-card {
   background-color: #ffffff !important;
@@ -2413,17 +2356,12 @@ body {
   text-align: left;
 }
 
-.review-card .image-placeholder {
-  background:
-    radial-gradient(ellipse at 82% 18%, rgba(217, 119, 6, 0.16), transparent 52%),
-    radial-gradient(ellipse at 12% 88%, rgba(224, 85, 47, 0.13), transparent 55%),
-    linear-gradient(135deg, #FDF9F3, #F8EFE2 58%, #F2E5D2);
-  border-bottom: 1px solid #F1E9DD;
-  color: #A68B6F;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+.review-card .review-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-bottom: 1px solid var(--line);
 }
 
 .verified-badge {
@@ -2589,8 +2527,6 @@ body {
    Every card-like surface: clean white, soft shadow, subtle border, 12px. */
 .card,
 .info-card,
-.weather-card,
-.packing-card,
 .season-card,
 .review-card,
 .author-box,
