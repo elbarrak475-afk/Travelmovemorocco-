@@ -15,9 +15,6 @@
   --terracotta-light: #FFF1EC;       /* Soft warm terracotta tint for badges/accents */
   --terracotta-glow: rgba(255, 87, 34, 0.28);
   --saffron: #D97706;                /* Rich warm saffron / amber */
-  --gold: #B45309;                   /* Deep Moroccan brass / warm gold */
-  --gold-soft: #FEF3C7;              /* Luminous warm gold tint */
-  --gold-dark: #78350F;              /* Deep legible gold */
 
   /* Neutrals & Surfaces */
   --sand-50: #FFFFFF;                /* Pure clean crisp white */
@@ -28,8 +25,6 @@
   --line-light: rgba(18, 24, 36, 0.06);
   --white: #FFFFFF;
   --dark: #111111;                   /* Rich deep charcoal/slate for dark surfaces */
-  --dark-surface: #1A1A1A;           /* Elevated charcoal/slate */
-  --dark-elevated: #222222;          /* High-elevation charcoal/slate */
 
   /* Typography & Ink (High Contrast & Clarity) */
   --ink: #111111;                    /* Rich, crisp near-black for razor-sharp headings */
@@ -50,7 +45,6 @@
   /* Elevation Shadows (Soft, Premium, Multi-layered) */
   --shadow-sm: 0 2px 6px rgba(18, 24, 36, 0.04), 0 1px 2px rgba(18, 24, 36, 0.02);
   --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.08); /* Soft, premium card elevation */
-  --shadow-md: 0 12px 28px -4px rgba(18, 24, 36, 0.08), 0 4px 10px -2px rgba(18, 24, 36, 0.03);
   --shadow-lg: 0 20px 40px -6px rgba(18, 24, 36, 0.12), 0 8px 16px -4px rgba(18, 24, 36, 0.05);
   --shadow-hover: 0 20px 40px -4px rgba(217, 83, 37, 0.16), 0 12px 24px -4px rgba(18, 24, 36, 0.08);
 }
@@ -1222,11 +1216,15 @@ nav a[aria-current="page"] { color: var(--terracotta); }
 .story h2, .section-title { font-family: var(--sans-display); font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 0 0 16px; color: var(--ink); }
 .story p { color: var(--ink-secondary); line-height: 1.75; margin: 0 0 16px; }
 .story-visual { min-height: 320px; border-radius: var(--r-lg); background: linear-gradient(135deg, var(--terracotta), var(--saffron)); color: #fff; display: flex; align-items: center; justify-content: center; text-align: center; padding: 32px; box-shadow: var(--shadow-lg); font-family: var(--sans-display); font-size: 1.5rem; font-weight: 700; line-height: 1.4; }
+.story-video { padding: 0; overflow: hidden; background: #111111; }
+.story-video video { display: block; width: 100%; height: 100%; min-height: 320px; object-fit: cover; }
 .values { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 32px; }
-.info-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--r); padding: 28px; box-shadow: var(--shadow-card); }
+.info-card { background: #F2FAF4; border: 1px solid #DDF0E1; border-radius: var(--r); padding: 28px; box-shadow: 0 1px 2px rgba(18, 24, 36, 0.04), 0 8px 24px rgba(18, 24, 36, 0.06); }
 .info-card h3 { margin: 0 0 10px; font-family: var(--sans-display); color: var(--ink); }
 .info-card p { margin: 0; color: var(--ink-secondary); line-height: 1.65; }
-.info-card .icon { font-size: 1.8rem; display: block; margin-bottom: 12px; }
+.info-card .icon { display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 64px; margin-bottom: 18px; font-size: 1.4rem; color: #1E7B44; background: #DDF0E1; border-radius: 50%; }
+.info-card .icon .fa-2x { font-size: 1.75em; }
+.info-card h3 > i, .contact-side li > i { color: #1E7B44; margin-right: 8px; }
 .band { background: var(--sand-200); text-align: center; }
 .band p { max-width: 640px; margin: 0 auto 24px; color: var(--ink-secondary); }
 .contact-layout { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: start; }
@@ -1593,8 +1591,8 @@ nav a::after {
 }
 
 .info-card {
-  background: #FFFFFF;
-  box-shadow: var(--shadow-card);
+  background: #F2FAF4;
+  box-shadow: 0 1px 2px rgba(18, 24, 36, 0.04), 0 8px 24px rgba(18, 24, 36, 0.06);
 }
 
 .story-visual {
@@ -1778,9 +1776,12 @@ a[href*="affiliate"]:hover {
 
 /* Cards: white, minimal border, soft shadow */
 .card,
-.info-card,
 .card div.b {
   background: #FFFFFF;
+}
+
+.info-card {
+  background: #F2FAF4;
 }
 
 .card {
@@ -1789,8 +1790,8 @@ a[href*="affiliate"]:hover {
 }
 
 .info-card {
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #DDF0E1;
+  box-shadow: 0 1px 2px rgba(18, 24, 36, 0.04), 0 8px 24px rgba(18, 24, 36, 0.06);
 }
 
 .card:hover {
@@ -2259,12 +2260,19 @@ img.article-img.featured-image { min-height: 0; }
 
 /* All card components: clean white with subtle border and soft shadow */
 .card,
-.info-card,
 .season-card,
 .review-card {
   background-color: #ffffff !important;
   border: 1px solid #eef0f4 !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+  border-radius: 12px !important;
+}
+
+/* Trust/info cards: soft green tint matching the PROS boxes */
+.info-card {
+  background-color: #F2FAF4 !important;
+  border: 1px solid #DDF0E1 !important;
+  box-shadow: 0 1px 2px rgba(18, 24, 36, 0.04), 0 8px 24px rgba(18, 24, 36, 0.06) !important;
   border-radius: 12px !important;
 }
 
@@ -2526,20 +2534,27 @@ body {
 /* --- 1. Global Card Consistency -----------------------------------------
    Every card-like surface: clean white, soft shadow, subtle border, 12px. */
 .card,
-.info-card,
 .season-card,
 .review-card,
 .author-box,
 .tip,
 .affiliate-note,
 .callout,
-.contact-side .info-card,
 .contact-form,
 .dropdown-menu {
   background-color: #ffffff;
   border: 1px solid #eaeaea;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+/* Trust/info cards keep the soft green PROS-box tone for visual consistency */
+.info-card,
+.contact-side .info-card {
+  background-color: #F2FAF4;
+  border: 1px solid #DDF0E1;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(18, 24, 36, 0.04), 0 8px 24px rgba(18, 24, 36, 0.06);
 }
 
 /* Card inner bodies stay white so image placeholders sit on a clean base */
