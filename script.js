@@ -297,6 +297,39 @@
   };
 
   // ---------------------------------------------------------------------------
+  // Module 5b: Contact Form
+  // ---------------------------------------------------------------------------
+  const initContactForm = () => {
+    const form = document.querySelector('.contact-form');
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const status = form.querySelector('.form-status');
+      const btn = form.querySelector('button[type="submit"]');
+      const originalText = btn ? btn.textContent : 'Send message';
+
+      if (btn) {
+        btn.textContent = 'Message sent!';
+        btn.disabled = true;
+      }
+      if (status) {
+        status.textContent = '✓ Thank you! We\'ll get back to you within 24 hours.';
+        status.className = 'form-status is-success';
+      }
+
+      form.reset();
+
+      setTimeout(() => {
+        if (btn) {
+          btn.textContent = originalText;
+          btn.disabled = false;
+        }
+      }, 3500);
+    });
+  };
+
+  // ---------------------------------------------------------------------------
   // Module 6: Reading Progress Bar (article pages only)
   // ---------------------------------------------------------------------------
   const initReadingProgress = () => {
@@ -396,6 +429,7 @@
     initGuidesGrid();
     initCheckoutHandler();
     initNewsletterForm();
+    initContactForm();
   };
 
   if (document.readyState === 'loading') {
