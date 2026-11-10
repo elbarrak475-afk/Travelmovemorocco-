@@ -1226,6 +1226,50 @@ nav a[aria-current="page"] { color: var(--terracotta); }
 .info-card h3 > i, .contact-side li > i { color: #1E7B44; margin-right: 8px; }
 .band { background: var(--sand-200); text-align: center; }
 .band p { max-width: 640px; margin: 0 auto 24px; color: var(--ink-secondary); }
+
+/* Social Follow & Share Section */
+.social-share { padding: 56px 0; text-align: center; background: var(--sand-200); }
+.social-share h2 { font-family: var(--sans-display); font-size: clamp(1.4rem, 2.6vw, 1.9rem); margin: 0 0 8px; color: var(--ink); }
+.social-share p { max-width: 560px; margin: 0 auto 24px; color: var(--ink-secondary); }
+.social-share-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.social-share-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border: 1px solid var(--sand-300); border-radius: var(--r-full); background: var(--white); color: var(--ink); font-size: 0.9rem; font-weight: 600; box-shadow: var(--shadow-sm); transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease; }
+.social-share-btn i { font-size: 1.05rem; }
+.social-share-btn:hover { transform: translateY(-2px); border-color: var(--terracotta); color: var(--terracotta); box-shadow: var(--shadow-hover); }
+
+/* Authentic social brand colors */
+.social-share-btn--instagram i { color: #E1306C; }
+.social-share-btn--instagram:hover { background: #E1306C; border-color: #E1306C; color: #FFFFFF; }
+.social-share-btn--instagram:hover i { color: #FFFFFF; }
+.social-share-btn--youtube i { color: #FF0000; }
+.social-share-btn--youtube:hover { background: #FF0000; border-color: #FF0000; color: #FFFFFF; }
+.social-share-btn--youtube:hover i { color: #FFFFFF; }
+.social-share-btn--facebook i { color: #1877F2; }
+.social-share-btn--facebook:hover { background: #1877F2; border-color: #1877F2; color: #FFFFFF; }
+.social-share-btn--facebook:hover i { color: #FFFFFF; }
+.social-share-btn--pinterest i { color: #E60023; }
+.social-share-btn--pinterest:hover { background: #E60023; border-color: #E60023; color: #FFFFFF; }
+.social-share-btn--pinterest:hover i { color: #FFFFFF; }
+.social-share-btn--share i { color: var(--terracotta); }
+.social-share-btn--share:hover { background: var(--terracotta); border-color: var(--terracotta); color: #FFFFFF; }
+.social-share-btn--share:hover i { color: #FFFFFF; }
+
+/* Footer social buttons: brand accent at rest, brand fill on hover (dark footer) */
+.social-btn--instagram { border-color: rgba(225, 48, 108, 0.55); }
+.social-btn--instagram svg { color: #E1306C; }
+.social-btn--instagram:hover { background: #E1306C; border-color: #E1306C; color: #FFFFFF; }
+.social-btn--instagram:hover svg { color: #FFFFFF; }
+.social-btn--youtube { border-color: rgba(255, 0, 0, 0.55); }
+.social-btn--youtube svg { color: #FF0000; }
+.social-btn--youtube:hover { background: #FF0000; border-color: #FF0000; color: #FFFFFF; }
+.social-btn--youtube:hover svg { color: #FFFFFF; }
+.social-btn--facebook { border-color: rgba(24, 119, 242, 0.55); }
+.social-btn--facebook svg { color: #1877F2; }
+.social-btn--facebook:hover { background: #1877F2; border-color: #1877F2; color: #FFFFFF; }
+.social-btn--facebook:hover svg { color: #FFFFFF; }
+.social-btn--pinterest { border-color: rgba(230, 0, 35, 0.55); }
+.social-btn--pinterest svg { color: #E60023; }
+.social-btn--pinterest:hover { background: #E60023; border-color: #E60023; color: #FFFFFF; }
+.social-btn--pinterest:hover svg { color: #FFFFFF; }
 .contact-layout { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: start; }
 .contact-form { display: grid; gap: 18px; }
 .contact-form label { display: block; font-weight: 600; margin-bottom: 6px; color: var(--ink); }
