@@ -29,20 +29,6 @@
     ['casablanca-things-to-do', 'Casablanca Things to Do: Hassan II Mosque, Corniche & Food', 'Beyond the airport: top Casablanca sights, art deco walks and seafood.', 'Casablanca'],
     ['merzouga-desert-guide', 'Merzouga Sahara Desert Tour: Camel Treks & Luxury Camps', 'How to book a Merzouga desert trip, what to pack and the best season.', 'Merzouga'],
     ['essaouira-travel-guide', 'Essaouira Travel Guide: Wind, Walls & Fresh Seafood', 'Wander Essaouira’s ramparts, port and beaches with this relaxed coastal guide.', 'Essaouira'],
-    ['agadir-beach-holiday-guide', 'Agadir Beach Holiday Guide: Resorts, Surf & Day Trips', 'Plan an Agadir beach break: best areas, surf spots and Taghazout trips.', 'Agadir'],
-    ['tangier-travel-guide', 'Tangier Travel Guide: Kasbah, Cafés & Cap Spartel', 'Explore Tangier’s literary history, kasbah and Atlantic-Mediterranean views.', 'Tangier'],
-    ['rabat-travel-guide', 'Rabat Travel Guide: Kasbah des Oudayas & Hassan Tower', 'Discover Morocco’s calm capital: kasbah, medina, Chellah and beaches.', 'Rabat'],
-    ['atlas-mountains-trekking', 'Atlas Mountains Trekking: Imlil, Toubkal & Berber Villages', 'Trek the High Atlas: routes, seasons, guides and village stays.', 'Atlas'],
-    ['ouarzazate-ait-benhaddou', 'Ouarzazate & Aït Benhaddou: Film Studios and Ancient Ksars', 'Visit Morocco’s “Hollywood” and the UNESCO ksar with our route guide.', 'Ouarzazate'],
-    ['dades-todra-gorges', 'Dades & Todra Gorges: Road Trip Stops and Best Views', 'Drive the Dades Valley and Todra Gorge with stops, hikes and stays.', 'Atlas'],
-    ['meknes-volubilis-day-trip', 'Meknes & Volubilis Day Trip from Fes', 'See imperial Meknes and Roman Volubilis in one easy day.', 'Meknes'],
-    ['ifrane-azrou-cedar-forest', 'Ifrane & Azrou: Morocco’s Alpine Side and Cedar Forests', 'Cool-weather escape: Barbary macaques, cedars and winter skiing.', 'Middle Atlas'],
-    ['morocco-7-day-itinerary', 'Morocco 7-Day Itinerary: Imperial Cities to the Sahara', 'A day-by-day one-week route with transport and budget tips.', 'Guide'],
-    ['morocco-travel-budget', 'Morocco Travel Budget: Daily Costs & Money-Saving Hacks', 'What Morocco really costs: stays, food, transport and tours.', 'Guide'],
-    ['morocco-transport-guide', 'Morocco Transport Guide: Trains, CTM Buses, Taxis & Car Rental', 'Get around Morocco: Al Boraq, buses, grand taxis and driving tips.', 'Guide'],
-    ['best-time-to-visit-morocco', 'Best Time to Visit Morocco: Month-by-Month Weather Guide', 'Choose the right season for the desert, coast, cities and mountains.', 'Guide'],
-    ['morocco-food-guide', 'Moroccan Food Guide: 15 Dishes to Try and Where', 'Tagine, couscous, pastilla and street food, with ordering tips.', 'Guide'],
-    ['morocco-travel-tips-first-timers', 'Morocco Travel Tips for First-Timers: Safety, Etiquette & Scams', 'Respectful, safe travel: dress, bargaining, SIMs and common scams.', 'Guide']
   ];
 
   // ---------------------------------------------------------------------------
@@ -373,56 +359,9 @@
   };
 
   // ---------------------------------------------------------------------------
-  // Module 7: "More" Dropdown Navigation
-  // ---------------------------------------------------------------------------
-  const initNavDropdown = () => {
-    const dropdown = document.querySelector('.nav-dropdown');
-    if (!dropdown) return;
-
-    const toggle = dropdown.querySelector('.nav-dropdown-toggle');
-    if (!toggle) return;
-
-    const hoverCapable = window.matchMedia('(min-width: 681px) and (hover: hover) and (pointer: fine)');
-
-    const setOpen = (open) => {
-      dropdown.classList.toggle('is-open', open);
-      toggle.setAttribute('aria-expanded', String(open));
-    };
-
-    toggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      setOpen(!dropdown.classList.contains('is-open'));
-    });
-
-    dropdown.addEventListener('click', (e) => {
-      if (e.target.closest('.dropdown-menu a')) setOpen(false);
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!dropdown.contains(e.target)) setOpen(false);
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && dropdown.classList.contains('is-open')) {
-        setOpen(false);
-        toggle.focus();
-      }
-    });
-
-    dropdown.addEventListener('mouseenter', () => {
-      if (hoverCapable.matches) toggle.setAttribute('aria-expanded', 'true');
-    });
-
-    dropdown.addEventListener('mouseleave', () => {
-      if (hoverCapable.matches) setOpen(false);
-    });
-  };
-
-  // ---------------------------------------------------------------------------
   // Initialization Lifecycle
   // ---------------------------------------------------------------------------
   const init = () => {
-    initNavDropdown();
     initReadingProgress();
     initMobileNavigation();
     initSmoothScroll();
@@ -438,4 +377,3 @@
     init();
   }
 })();
-
