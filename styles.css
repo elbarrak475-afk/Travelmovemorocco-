@@ -127,7 +127,7 @@ img {
 
 /* --- Navigation & Header --- */
 header.site {
-  position: absolute;
+  position: sticky;
   top: 0;
   right: 0;
   left: 0;
@@ -1021,12 +1021,8 @@ body > article ol {
   }
 }
 
-/* Mobile Screens (Max 680px): 1 column grid & stacked layouts */
-@media (max-width: 680px) {
-  .wrap {
-    width: min(100% - 32px, var(--content));
-  }
-
+/* Collapse the navigation before its links run out of space. */
+@media (max-width: 960px) {
   header.site .wrap {
     min-height: 68px;
     gap: 12px;
@@ -1054,6 +1050,10 @@ body > article ol {
     box-shadow: none;
     padding: 16px 20px 24px;
     gap: 4px;
+    max-height: calc(100vh - 69px);
+    max-height: calc(100dvh - 69px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
     visibility: hidden;
     opacity: 0;
     transform: translateY(-8px);
@@ -1089,6 +1089,13 @@ body > article ol {
   header.site nav a::after {
     display: none;
   }
+}
+
+/* Mobile Screens (Max 680px): 1 column grid & stacked layouts */
+@media (max-width: 680px) {
+  .wrap {
+    width: min(100% - 32px, var(--content));
+  }
 
   .hero {
     min-height: min(640px, calc(100svh - 68px));
@@ -1096,7 +1103,15 @@ body > article ol {
   }
 
   .hero h1 {
-    font-size: clamp(2.4rem, 11vw, 3.8rem);
+    font-size: clamp(2rem, 8vw, 3.8rem);
+  }
+
+  body > article h1 {
+    font-size: clamp(1.85rem, 7.5vw, 2.2rem);
+  }
+
+  .ebook h2 {
+    font-size: clamp(1.75rem, 7vw, 2.1rem);
   }
 
   #destinations {
@@ -1270,16 +1285,18 @@ nav a[aria-current="page"] { color: var(--terracotta); }
 .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--terracotta); box-shadow: 0 0 0 3px var(--terracotta-glow); background: #fff; }
 .contact-form .btn { justify-self: start; border: 0; cursor: pointer; }
 .form-status { margin: 0; font-weight: 600; color: var(--terracotta-dark); }
-.contact-side { display: grid; gap: 24px; }
-.contact-side ul { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 10px; color: var(--ink-secondary); }
-.contact-side a:not(.social-btn) { color: var(--terracotta-dark); font-weight: 600; }
+.contact-side { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; }
+.contact-side ul { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 10px; color: var(--ink-secondary); overflow-wrap: anywhere; }
+.contact-side a:not(.social-btn):not(.social-share-btn) { color: var(--terracotta-dark); font-weight: 600; }
 .contact-side .social-links { margin-top: 14px; }
+.contact-side .social-share-buttons { justify-content: flex-start; }
 @media (max-width: 960px) {
-  .story, .contact-layout { grid-template-columns: 1fr; gap: 32px; }
+  .story, .contact-layout { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .values { grid-template-columns: 1fr; }
 }
 @media (max-width: 680px) {
   .page-hero { padding: 48px 0 40px; }
+  .page-hero h1 { font-size: clamp(1.75rem, 7vw, 2rem); }
   .page-section { padding: 44px 0; }
 }
 
@@ -1312,7 +1329,7 @@ body.menu-locked {
   overflow: hidden;
 }
 
-@media (min-width: 681px) {
+@media (min-width: 961px) {
   body.menu-locked {
     overflow: auto;
   }
@@ -1772,7 +1789,7 @@ body > article a:not(.btn):hover {
 }
 
 .card h3 a:hover,
-.contact-side a:not(.social-btn) {
+.contact-side a:not(.social-btn):not(.social-share-btn) {
   color: #111111;
   text-decoration: underline;
 }
@@ -2494,6 +2511,11 @@ body > article .featured-image,
   line-height: 1.75;
 }
 
+.contact-layout .info-card h2,
+.contact-layout .info-card h3 {
+  color: #111827;
+}
+
 /* Uniform vertical gaps inside card bodies */
 .card div.b > p,
 .info-card p {
@@ -2584,7 +2606,7 @@ body > article .featured-image,
   .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .values { grid-template-columns: 1fr; }
   .story,
-  .contact-layout { grid-template-columns: 1fr; gap: 32px; }
+  .contact-layout { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .climate-grid,
   .season-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .checklist-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }

@@ -117,7 +117,7 @@
     });
 
     // Reset when resizing past mobile breakpoint
-    const desktopMedia = window.matchMedia('(min-width: 681px)');
+    const desktopMedia = window.matchMedia('(min-width: 961px)');
     desktopMedia.addEventListener('change', (e) => {
       if (e.matches) {
         closeMenu();
